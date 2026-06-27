@@ -1,0 +1,22 @@
+# ── Colab / Backend ───────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn>=0.29.0
+python-multipart>=0.0.9
+nest_asyncio>=1.6.0
+
+torch>=2.2.0
+torchvision>=0.17.0
+diffusers>=0.27.0
+transformers>=4.39.0
+accelerate>=0.28.0
+safetensors>=0.4.2
+xformers>=0.0.25
+timm>=0.9.16
+einops>=0.7.0
+
+opencv-python-headless>=4.9.0.80
+Pillow>=10.2.0
+
+# ── Frontend (Streamlit) ──────────────────────────────────────────────────────
+streamlit>=1.32.0
+requests>=2.31.0

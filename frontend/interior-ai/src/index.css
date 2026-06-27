@@ -1,0 +1,271 @@
+/* Google Fonts must come before @tailwind directives */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: #FAFAF8;
+    color: #111111;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  ::selection { background: #E8E2D9; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #D5CEC5; }
+  :focus-visible { outline: 1.5px solid #1F4E79; outline-offset: 3px; }
+}
+
+@layer components {
+
+  /* ── Type Scale ─────────────────────────────────────────────────────── */
+  .display-1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 0.96;
+  }
+  .display-2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.018em;
+    line-height: 1.05;
+  }
+  .display-3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.1;
+  }
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #888882;
+  }
+  .body-editorial {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.72;
+    color: #666666;
+  }
+  .label-xs {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #888882;
+    line-height: 1.5;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── Structural ──────────────────────────────────────────────────────── */
+  .rule {
+    height: 1px;
+    background: #E5E5E5;
+  }
+  .rule-v {
+    width: 1px;
+    background: #E5E5E5;
+  }
+
+  /* ── Link underline animation ────────────────────────────────────────── */
+  .link-underline {
+    position: relative;
+    text-decoration: none;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 100%; bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover::after { right: 0; }
+
+  /* ── Buttons ─────────────────────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #FAFAF8;
+    background: #111111;
+    border: 1px solid #111111;
+    transition: background 0.4s, color 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: #1F4E79;
+    border-color: #1F4E79;
+  }
+  .btn-primary:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #111111;
+    background: transparent;
+    border: 1px solid #111111;
+    transition: background 0.4s, color 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+  }
+  .btn-outline:hover { background: #111111; color: #FAFAF8; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    background: transparent;
+    border: 1px solid #E5E5E5;
+    transition: border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    user-select: none;
+  }
+  .btn-ghost:hover { border-color: #111111; color: #111111; }
+
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FAFAF8;
+    background: #1F4E79;
+    border: 1px solid #1F4E79;
+    transition: background 0.4s;
+    cursor: pointer;
+    user-select: none;
+  }
+  .btn-accent:hover:not(:disabled) { background: #163d61; }
+  .btn-accent:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* btn-charcoal — legacy alias used throughout landing components */
+  .btn-charcoal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #FAFAF8;
+    background: #111111;
+    border: 1px solid #111111;
+    transition: background 0.4s, color 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+  }
+  .btn-charcoal:hover:not(:disabled) { background: #1F4E79; border-color: #1F4E79; }
+  .btn-charcoal:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* ── Form inputs ─────────────────────────────────────────────────────── */
+  .input-field {
+    width: 100%;
+    padding: 11px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #111111;
+    background: #FAFAF8;
+    border: 1px solid #E5E5E5;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .input-field::placeholder { color: #AAAAAA; }
+  .input-field:focus { border-color: #111111; }
+  .input-field.error { border-color: #B42318; }
+
+  /* ── Loading skeleton ────────────────────────────────────────────────── */
+  .skeleton {
+    background: linear-gradient(90deg, #EEEDE9 25%, #E5E4E0 50%, #EEEDE9 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.6s ease-in-out infinite;
+  }
+  @keyframes skeleton-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ── Status dots ─────────────────────────────────────────────────────── */
+  .dot-ok    { width: 6px; height: 6px; border-radius: 50%; background: #2F6F57; flex-shrink: 0; }
+  .dot-warn  { width: 6px; height: 6px; border-radius: 50%; background: #A36A00; flex-shrink: 0; }
+  .dot-error { width: 6px; height: 6px; border-radius: 50%; background: #B42318; flex-shrink: 0; }
+  .dot-idle  { width: 6px; height: 6px; border-radius: 50%; background: #CCCCCC; flex-shrink: 0; }
+
+  /* ── Spin animation ──────────────────────────────────────────────────── */
+  @keyframes spin-cw { to { transform: rotate(360deg); } }
+  .animate-spin-cw { animation: spin-cw 0.8s linear infinite; }
+
+  /* ── Step numeral ────────────────────────────────────────────────────── */
+  .step-numeral {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    color: #D8D4CE;
+    line-height: 1;
+  }
+
+  /* ── Affinity bar ────────────────────────────────────────────────────── */
+  .affinity-track {
+    height: 2px;
+    background: #EEEDE9;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .affinity-fill {
+    position: absolute;
+    inset: 0;
+    background: #1F4E79;
+    transform-origin: left;
+  }
+
+  /* ── Legacy color compat ─────────────────────────────────────────────── */
+  .text-charcoal { color: #111111; }
+  .bg-ivory { background: #F5F4F0; }
+  .bg-surface { background: #FAFAF8; }
+  .bg-muted { background: #F5F4F0; }
+  .border-stone-100 { border-color: #E5E5E5; }
+  .text-clay { color: #1F4E79; }
+  .bg-clay { background: #1F4E79; }
+}

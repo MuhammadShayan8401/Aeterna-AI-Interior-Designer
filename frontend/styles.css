@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ───────────────────────────────
+   GLOBAL RESET / THEME
+─────────────────────────────── */
+
+.stApp {
+    background: radial-gradient(circle at top, #1a1a2e, #0f0f1a) !important;
+    color: white !important;
+}
+
+html, body, [class*="css"] {
+    font-family: "DM Sans", sans-serif !important;
+    color: white !important;
+}
+
+/* ───────────────────────────────
+   HEADINGS
+─────────────────────────────── */
+
+h1, h2, h3, h4 {
+    font-family: "DM Serif Display", serif !important;
+    color: white !important;
+}
+
+/* ───────────────────────────────
+   HERO
+─────────────────────────────── */
+
+.hero-container {
+    background: linear-gradient(135deg, #1a1a2e, #2d2d5e);
+    padding: 2rem;
+    border-radius: 18px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* ───────────────────────────────
+   SIDEBAR (SaaS PANEL STYLE)
+─────────────────────────────── */
+
+section[data-testid="stSidebar"] {
+    background: rgba(20, 20, 40, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+/* ───────────────────────────────
+   UPLOADER (GLASS CARD)
+─────────────────────────────── */
+
+[data-testid="stFileUploader"] {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+/* ───────────────────────────────
+   BUTTONS
+─────────────────────────────── */
+
+.stButton > button {
+    background: rgba(255,255,255,0.08) !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    background: rgba(255,255,255,0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Primary button */
+.stButton > button[kind="primary"] {
+    background: #4f46e5 !important;
+    border: none !important;
+}
+
+/* ───────────────────────────────
+   INPUTS / DROPDOWNS
+─────────────────────────────── */
+
+[data-baseweb="select"],
+[data-baseweb="input"] {
+    background: rgba(255,255,255,0.05) !important;
+    color: white !important;
+}
+
+/* ───────────────────────────────
+   EXPANDERS
+─────────────────────────────── */
+
+[data-testid="stExpander"] {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 12px !important;
+}
+
+/* ───────────────────────────────
+   MIDJOURNEY IMAGE GRID
+─────────────────────────────── */
+
+div[data-testid="column"] {
+    overflow: visible !important;
+}
+
+[data-testid="stImage"] img {
+    border-radius: 14px;
+    transition: all 0.25s ease;
+    cursor: zoom-in;
+    opacity: 0.95;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Hover zoom + glow */
+[data-testid="stImage"] img:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.5),
+        0 0 25px rgba(120,120,255,0.3);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* ───────────────────────────────
+   RESULTS TEXT (FIX BIG ISSUE)
+─────────────────────────────── */
+
+.stMarkdown, p, span, label {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* Bigger captions */
+[data-testid="stCaptionContainer"] {
+    font-size: 0.95rem !important;
+    color: rgba(255,255,255,0.6) !important;
+}
+
+/* ───────────────────────────────
+   METRICS
+─────────────────────────────── */
+
+[data-testid="stMetricValue"] {
+    font-size: 2.2rem !important;
+    color: white !important;
+}
+
+/* ───────────────────────────────
+   FOOTER (FIX SMALL TEXT)
+─────────────────────────────── */
+
+footer, .footer {
+    font-size: 1rem !important;
+    color: rgba(255,255,255,0.6) !important;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ───────────────────────────────
+   DIVIDER
+─────────────────────────────── */
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
