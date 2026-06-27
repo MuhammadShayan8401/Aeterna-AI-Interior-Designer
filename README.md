@@ -374,7 +374,7 @@ The platform supports seven interior design styles across both redesign and empt
 ## Author
 
 **Muhammad Shayan Ahmed**  
-AI + Full Stack Developer · Computer Science Student  
+AI + Full Stack Developer · Software Engineering Student  
 Sir Syed University of Engineering & Technology, Karachi
 
 ---
