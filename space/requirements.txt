@@ -1,0 +1,13 @@
+# gradio itself is installed by Hugging Face from `sdk_version` in README.md
+torch
+diffusers>=0.30
+transformers>=4.44
+accelerate
+peft
+safetensors
+Pillow
+numpy
+argon2-cffi
+PyJWT
+pymongo[srv]
+sentry-sdk
