@@ -13,7 +13,7 @@ export default function About() {
         Interior ideas, in minutes.
       </h1>
       <p style={P}>
-        Aeterna is a final-year deep learning project from Sir Syed University of Engineering &amp; Technology, Karachi.
+        Aeterna is a deep learning project from Sir Syed University of Engineering &amp; Technology, Karachi.
         It helps you picture a room in a new style before you spend anything on it.
       </p>
 
